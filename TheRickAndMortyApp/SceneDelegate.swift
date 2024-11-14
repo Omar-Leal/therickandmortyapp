@@ -6,9 +6,10 @@
 //
 
 import UIKit
+import FirebaseCore
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
-
+    let appAuthService = AuthService()
     var globalWindow: UIWindow?
 
 
@@ -16,9 +17,19 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
        func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
            guard let windowScene = (scene as? UIWindowScene) else { return }
            
+           // Inicializar firebase
+          
+           
            globalWindow = UIWindow(frame: windowScene.coordinateSpace.bounds)
            globalWindow?.windowScene = windowScene
-           globalWindow?.rootViewController = MainTabBarController()
+           if appAuthService.currentUser.value != nil {
+               globalWindow?.rootViewController = MainTabBarController()
+           } else {
+               let loginViewModel = LoginViewModel(authService: appAuthService)
+               let showLoginView = LoginViewController(viewModel: loginViewModel)
+               globalWindow?.rootViewController = showLoginView
+           }
+         
            globalWindow?.makeKeyAndVisible()
        }
 
