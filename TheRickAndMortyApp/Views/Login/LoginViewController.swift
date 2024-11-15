@@ -13,13 +13,23 @@ class LoginViewController: UIViewController {
         private var viewModel: LoginViewModel
         private var cancellables = Set<AnyCancellable>()
         
-        
+        // Logo
+    
+       private let mainLogo: UIImageView = {
+         let imageView = UIImageView()
+         imageView.contentMode = .scaleAspectFit
+         imageView.translatesAutoresizingMaskIntoConstraints = false
+           imageView.image = UIImage(named: "Rick-and-Morty")
+         return imageView
+     }()
         private let emailTextField: UITextField = {
             let textField = UITextField()
             textField.placeholder = "Email"
             textField.borderStyle = .roundedRect
             textField.keyboardType = .emailAddress
             textField.autocapitalizationType = .none
+            textField.layer.cornerRadius = 20
+            textField.layer.masksToBounds = true
             textField.translatesAutoresizingMaskIntoConstraints = false
             return textField
         }()
@@ -29,6 +39,7 @@ class LoginViewController: UIViewController {
             label.textColor = .red
             label.font = UIFont.systemFont(ofSize: 12)
             label.isHidden = true
+            
             label.translatesAutoresizingMaskIntoConstraints = false
             return label
         }()
@@ -38,6 +49,8 @@ class LoginViewController: UIViewController {
             textField.placeholder = "Password"
             textField.borderStyle = .roundedRect
             textField.isSecureTextEntry = true
+            textField.layer.cornerRadius = 20
+            textField.layer.masksToBounds = true
             textField.translatesAutoresizingMaskIntoConstraints = false
             return textField
         }()
@@ -56,7 +69,7 @@ class LoginViewController: UIViewController {
             button.setTitle("Login", for: .normal)
             button.backgroundColor = .systemBlue
             button.setTitleColor(.white, for: .normal)
-            button.layer.cornerRadius = 8
+            button.layer.cornerRadius = 20
             button.addTarget(self, action: #selector(didTapLoginButton), for: .touchUpInside)
             button.translatesAutoresizingMaskIntoConstraints = false
             return button
@@ -82,7 +95,7 @@ class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor(hex: "#F1F2F6")
+        view.backgroundColor = .white
         setupBindings()
         settingUpConstraints()
        
@@ -90,6 +103,7 @@ class LoginViewController: UIViewController {
     
 
     private func settingUpConstraints() {
+            view.addSubview(mainLogo)
             view.addSubview(emailTextField)
             view.addSubview(emailErrorLabel)
             view.addSubview(passwordTextField)
@@ -98,31 +112,38 @@ class LoginViewController: UIViewController {
             view.addSubview(goToRegisterScreen)
             
             
-            NSLayoutConstraint.activate([
-                emailTextField.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 50),
-                emailTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-                emailTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-                
-                emailErrorLabel.topAnchor.constraint(equalTo: emailTextField.bottomAnchor, constant: 5),
-                emailErrorLabel.leadingAnchor.constraint(equalTo: emailTextField.leadingAnchor),
-                emailErrorLabel.trailingAnchor.constraint(equalTo: emailTextField.trailingAnchor),
-                
-                passwordTextField.topAnchor.constraint(equalTo: emailErrorLabel.bottomAnchor, constant: 20),
-                passwordTextField.leadingAnchor.constraint(equalTo: emailTextField.leadingAnchor),
-                passwordTextField.trailingAnchor.constraint(equalTo: emailTextField.trailingAnchor),
-                
-                passwordErrorLabel.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 5),
-                passwordErrorLabel.leadingAnchor.constraint(equalTo: passwordTextField.leadingAnchor),
-                passwordErrorLabel.trailingAnchor.constraint(equalTo: passwordTextField.trailingAnchor),
-                
-                loginButton.topAnchor.constraint(equalTo: passwordErrorLabel.bottomAnchor, constant: 30),
-                loginButton.leadingAnchor.constraint(equalTo: passwordTextField.leadingAnchor),
-                loginButton.trailingAnchor.constraint(equalTo: passwordTextField.trailingAnchor),
-                loginButton.heightAnchor.constraint(equalToConstant: 50),
-                
-                goToRegisterScreen.topAnchor.constraint(equalTo: loginButton.bottomAnchor, constant: 20),
-                goToRegisterScreen.centerXAnchor.constraint(equalTo: view.centerXAnchor)
-            ])
+        NSLayoutConstraint.activate([
+            mainLogo.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.5), // 50% del ancho
+            mainLogo.heightAnchor.constraint(equalTo: mainLogo.widthAnchor, multiplier: 0.5),
+            mainLogo.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 48),
+            mainLogo.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+          
+
+            emailTextField.topAnchor.constraint(equalTo: mainLogo.bottomAnchor, constant: -8),
+            emailTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            emailTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+
+            emailErrorLabel.topAnchor.constraint(equalTo: emailTextField.bottomAnchor, constant: 5),
+            emailErrorLabel.leadingAnchor.constraint(equalTo: emailTextField.leadingAnchor),
+            emailErrorLabel.trailingAnchor.constraint(equalTo: emailTextField.trailingAnchor),
+
+            passwordTextField.topAnchor.constraint(equalTo: emailErrorLabel.bottomAnchor, constant: 20),
+            passwordTextField.leadingAnchor.constraint(equalTo: emailTextField.leadingAnchor),
+            passwordTextField.trailingAnchor.constraint(equalTo: emailTextField.trailingAnchor),
+
+            passwordErrorLabel.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 5),
+            passwordErrorLabel.leadingAnchor.constraint(equalTo: passwordTextField.leadingAnchor),
+            passwordErrorLabel.trailingAnchor.constraint(equalTo: passwordTextField.trailingAnchor),
+
+            loginButton.topAnchor.constraint(equalTo: passwordErrorLabel.bottomAnchor, constant: 30),
+            loginButton.leadingAnchor.constraint(equalTo: passwordTextField.leadingAnchor),
+            loginButton.trailingAnchor.constraint(equalTo: passwordTextField.trailingAnchor),
+            loginButton.heightAnchor.constraint(equalToConstant: 50),
+
+            goToRegisterScreen.topAnchor.constraint(equalTo: loginButton.bottomAnchor, constant: 20),
+            goToRegisterScreen.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+        ])
+
         }
     
     

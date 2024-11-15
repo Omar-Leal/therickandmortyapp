@@ -12,18 +12,31 @@ import Combine
 protocol AuthServiceProtocol {
     var currentUser: CurrentValueSubject<User?, Never> { get }
     func signIn(email: String, password: String) -> AnyPublisher<User, Error>
-
     func fetchUserData() -> AnyPublisher<UserData, Error>
 }
 
 class AuthService: AuthServiceProtocol {
     var currentUser = CurrentValueSubject<User?, Never>(Auth.auth().currentUser)
+    static let shared = AuthService()
     
+  
+       
     init() {
         Auth.auth().addStateDidChangeListener { [weak self] _, user in
             self?.currentUser.send(user)
         }
+        
+        
     }
+    
+    func checkAuthState() -> AnyPublisher<Bool, Never> {
+           return Future<Bool, Never> { promise in
+               Auth.auth().addStateDidChangeListener { _, user in
+                   promise(.success(user != nil))
+               }
+           }.eraseToAnyPublisher()
+       }
+       
     
     func signIn(email: String, password: String) -> AnyPublisher<User, Error> {
         Future { promise in
@@ -53,6 +66,15 @@ class AuthService: AuthServiceProtocol {
             }
         }.eraseToAnyPublisher()
     }
+    
+    
+    func signOut() throws {
+            do {
+                try Auth.auth().signOut()
+            } catch let error {
+                throw error
+            }
+        }
 }
 
 

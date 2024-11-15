@@ -8,10 +8,27 @@
 import UIKit
 
 class MainTabBarController: UITabBarController  {
-
+    private var viewModel = LoginViewModel(authService: AuthService())
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor(hex: "#F1F2F6")
+      //  tabBar.isTranslucent = false
+        
+        let blurEffect = UIBlurEffect(style: .systemMaterial) // Usa el estilo de desenfoque que prefieras
+
+        // Crear un fondo con el efecto de desenfoque
+        let blurBackground = UIVisualEffectView(effect: blurEffect)
+        blurBackground.frame = tabBar.bounds
+        blurBackground.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+
+        // Configurar la apariencia del UITabBar
+        let appearance = UITabBarAppearance()
+        appearance.backgroundEffect = blurEffect // Aplicar el efecto de desenfoque al fondo
+
+        tabBar.standardAppearance = appearance
+        if #available(iOS 15.0, *) {
+            tabBar.scrollEdgeAppearance = appearance
+        }
         let navigationBar = UINavigationBar(frame: CGRect(x: 0, y: 50, width: view.frame.width, height: 44))
                view.addSubview(navigationBar)
         
@@ -25,19 +42,17 @@ class MainTabBarController: UITabBarController  {
                let navigationItem = UINavigationItem(title: "Título Manual")
                
                // Botones en la barra
-               let leftButton = UIBarButtonItem(title: "Atrás", style: .plain, target: self, action: #selector(backButtonTapped))
-               let rightButton = UIBarButtonItem(title: "Guardar", style: .plain, target: self, action: #selector(saveButtonTapped))
+               let leftButton = UIBarButtonItem(title: "Sign Out", style: .plain, target: self, action: #selector(didTapSignOut))
+               let rightButton = UIBarButtonItem(title: "Perfil", style: .plain, target: self, action: #selector(saveButtonTapped))
                navigationItem.leftBarButtonItem = leftButton
                navigationItem.rightBarButtonItem = rightButton
-               
-
                navigationBar.items = [navigationItem]
 
         
         
-        let homeViewController = UINavigationController(rootViewController: HomeViewController())
-        let episodeViewController = UINavigationController(rootViewController: EpisodeViewController())
-        let locationViewController = UINavigationController(rootViewController: EpisodeViewController())
+                let homeViewController = UINavigationController(rootViewController: HomeViewController())
+                let episodeViewController = UINavigationController(rootViewController: EpisodeViewController())
+                let locationViewController = UINavigationController(rootViewController: EpisodeViewController())
         
 
                 let logoImageView = UIImageView(image: UIImage(named: "rickandmortylogo"))
@@ -63,8 +78,26 @@ class MainTabBarController: UITabBarController  {
         
         
     }
-    @objc private func backButtonTapped() {}
+   
     @objc private func saveButtonTapped() {}
+    
+    @objc  func didTapSignOut() {
+        print("cerrando sesion")
+        viewModel.signOut()
+               if !viewModel.isLoggedIn {
+                   redirectToLogin()
+               }
+    }
+    
+    private func redirectToLogin() {
+        let loginVC = LoginViewController(viewModel: LoginViewModel(authService: AuthService()))
+            let navController = UINavigationController(rootViewController: loginVC)
+            if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+               let window = windowScene.windows.first {
+                window.rootViewController = navController
+                window.makeKeyAndVisible()
+            }
+        }
 
 }
 

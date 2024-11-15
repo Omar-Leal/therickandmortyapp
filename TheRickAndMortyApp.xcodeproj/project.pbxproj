@@ -25,6 +25,8 @@
 		E7791B2B2CE56ADA00AAC8C6 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7791B2A2CE56ADA00AAC8C6 /* UserProfile.swift */; };
 		E77AD6EC2CE741F300B8D6C2 /* FilterPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77AD6EB2CE741F300B8D6C2 /* FilterPopUpViewController.swift */; };
 		E77AD6EE2CE7467500B8D6C2 /* GetColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77AD6ED2CE7467500B8D6C2 /* GetColors.swift */; };
+		E77AD6F02CE76BDD00B8D6C2 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77AD6EF2CE76BDD00B8D6C2 /* AppCoordinator.swift */; };
+		E77AD6F22CE7966300B8D6C2 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77AD6F12CE7966300B8D6C2 /* ImageCache.swift */; };
 		E7AAFD652CE510A200B54A0E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7AAFD642CE510A200B54A0E /* AppDelegate.swift */; };
 		E7AAFD672CE510A200B54A0E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7AAFD662CE510A200B54A0E /* SceneDelegate.swift */; };
 		E7AAFD692CE510A200B54A0E /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7AAFD682CE510A200B54A0E /* MainTabBarController.swift */; };
@@ -53,6 +55,8 @@
 		E7791B2A2CE56ADA00AAC8C6 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		E77AD6EB2CE741F300B8D6C2 /* FilterPopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterPopUpViewController.swift; sourceTree = "<group>"; };
 		E77AD6ED2CE7467500B8D6C2 /* GetColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetColors.swift; sourceTree = "<group>"; };
+		E77AD6EF2CE76BDD00B8D6C2 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		E77AD6F12CE7966300B8D6C2 /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 		E7AAFD612CE510A200B54A0E /* TheRickAndMortyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheRickAndMortyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7AAFD642CE510A200B54A0E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E7AAFD662CE510A200B54A0E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -156,6 +160,7 @@
 		E7791B172CE5689F00AAC8C6 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				E77AD6EF2CE76BDD00B8D6C2 /* AppCoordinator.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -183,6 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				E77AD6ED2CE7467500B8D6C2 /* GetColors.swift */,
+				E77AD6F12CE7966300B8D6C2 /* ImageCache.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -394,6 +400,8 @@
 				E77AD6EC2CE741F300B8D6C2 /* FilterPopUpViewController.swift in Sources */,
 				E76BEE392CE654B3000FB38A /* RegisterViewModel.swift in Sources */,
 				E7791B162CE543D700AAC8C6 /* LocationViewController.swift in Sources */,
+				E77AD6F22CE7966300B8D6C2 /* ImageCache.swift in Sources */,
+				E77AD6F02CE76BDD00B8D6C2 /* AppCoordinator.swift in Sources */,
 				E76BEE402CE686AB000FB38A /* HomeViewModel.swift in Sources */,
 				E77AD6EE2CE7467500B8D6C2 /* GetColors.swift in Sources */,
 				E76BEE492CE69AC6000FB38A /* CharacterCell.swift in Sources */,

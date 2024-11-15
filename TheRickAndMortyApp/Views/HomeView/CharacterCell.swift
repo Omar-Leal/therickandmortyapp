@@ -34,7 +34,9 @@ class CharacterCell: UITableViewCell {
            // Configure the views here
            characterImageView.contentMode = .scaleAspectFill
            characterImageView.clipsToBounds = true
-           characterImageView.layer.cornerRadius = 8
+           characterImageView.layer.cornerRadius = 20
+           characterImageView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMinXMaxYCorner] // Esquinas superior izquierda y superior derecha
+           characterImageView.clipsToBounds = true
 
            nameLabel.font = UIFont.boldSystemFont(ofSize: 18)
            statusLabel.font = UIFont.systemFont(ofSize: 14)
@@ -42,11 +44,19 @@ class CharacterCell: UITableViewCell {
            locationLabel.font = UIFont.systemFont(ofSize: 12)
            episodeLabel.font = UIFont.systemFont(ofSize: 12)
            episodeLabel.textColor = .gray
+           
+          
 
            let stack = UIStackView(arrangedSubviews: [nameLabel, statusLabel, speciesLabel, locationLabel, episodeLabel])
+           stack.isLayoutMarginsRelativeArrangement = true
+           stack.layoutMargins = UIEdgeInsets(top: 0, left: 0, bottom: 40, right: 0)
            stack.axis = .vertical
+           stack.alignment = .center
            stack.spacing = 4
-
+           stack.setCustomSpacing(-20, after: nameLabel)
+           
+           
+           
            let container = UIStackView(arrangedSubviews: [characterImageView, stack])
            container.axis = .horizontal
            container.spacing = 8
@@ -58,15 +68,15 @@ class CharacterCell: UITableViewCell {
                container.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
                container.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8),
                container.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8),
-               characterImageView.widthAnchor.constraint(equalToConstant: 80),
-               characterImageView.heightAnchor.constraint(equalToConstant: 140)
+               characterImageView.widthAnchor.constraint(equalToConstant: 120),
+               characterImageView.heightAnchor.constraint(equalToConstant: 190)
            ])
            
-           container.layer.cornerRadius = 10  // Bordes redondeados
+           container.layer.cornerRadius = 20  // Bordes redondeados
            container.layer.masksToBounds = false
-           container.layer.shadowColor = UIColor.black.cgColor
-           container.layer.shadowOpacity = 0.2
-           container.layer.shadowOffset = CGSize(width: 0, height: 2)
+           container.layer.shadowColor = UIColor.gray.cgColor
+           container.layer.shadowOpacity = 0.1
+           container.layer.shadowOffset = CGSize(width: 0, height: 1)
            container.layer.shadowRadius = 4
            container.backgroundColor = .white
            
@@ -89,17 +99,15 @@ class CharacterCell: UITableViewCell {
               statusLabel.text = character.status
               speciesLabel.text = character.species
               locationLabel.text = "Last known location: \(character.location.name)"
-              episodeLabel.text = "First seen in: \(character.firstEpisode ?? "Unknown")"
+
               
-              if let url = URL(string: character.image) {
-                  URLSession.shared.dataTask(with: url) { data, _, _ in
-                      if let data = data {
+              
+              // Almacenamiento de la imagen en cache con el objeto creato en la carpeta Utils
+              ImageCache.shared.getImage(for: character.image) { [weak self] image in
                           DispatchQueue.main.async {
-                              self.characterImageView.image = UIImage(data: data)
+                              self?.characterImageView.image = image
                           }
                       }
-                  }.resume()
-              }
           } else {
               // Mostrar Skeleton si los datos aún no están disponibles
               showSkeleton()

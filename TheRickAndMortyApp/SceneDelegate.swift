@@ -11,7 +11,7 @@ import FirebaseCore
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     let appAuthService = AuthService()
     var globalWindow: UIWindow?
-
+    var appCoordinator: AppCoordinator?
 
     //entry point
        func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
@@ -19,21 +19,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
            
            // Inicializar fir     let mainApp =
            
-           globalWindow = UIWindow(frame: windowScene.coordinateSpace.bounds)
-           globalWindow?.windowScene = windowScene
-           if appAuthService.currentUser.value != nil {
-               let mainViews = MainTabBarController()
-               let showAllView = UINavigationController(rootViewController: mainViews)
-               globalWindow?.rootViewController = showAllView
-           } else {
-               let loginViewModel = LoginViewModel(authService: appAuthService)
-               let showLoginView = LoginViewController(viewModel: loginViewModel)
-               let loginVC = UINavigationController(rootViewController: showLoginView)
-               globalWindow?.rootViewController = loginVC
-           }
-         
-           globalWindow?.makeKeyAndVisible()
-       }
+           
+                // Crear una nueva ventana para la escena
+           globalWindow = UIWindow(windowScene: windowScene)
+        
+        // Crear el AppCoordinator y comenzar la navegación
+        appCoordinator = AppCoordinator(window: globalWindow!)
+        appCoordinator?.start()
+           
+    }
 
     func sceneDidDisconnect(_ scene: UIScene) {}
 

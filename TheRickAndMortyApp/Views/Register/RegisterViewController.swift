@@ -16,6 +16,9 @@ class RegisterViewController: UIViewController {
         let textField = UITextField()
         textField.placeholder = "Correo electrónico"
         textField.borderStyle = .roundedRect
+        textField.layer.masksToBounds = true
+        textField.layer.cornerRadius = 20
+        
         return textField
     }()
     
@@ -24,12 +27,17 @@ class RegisterViewController: UIViewController {
         textField.placeholder = "Contraseña"
         textField.isSecureTextEntry = true
         textField.borderStyle = .roundedRect
+        textField.layer.cornerRadius = 20
+        textField.layer.masksToBounds = true
         return textField
     }()
     
     private let registerButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Registrarse", for: .normal)
+        button.backgroundColor = .systemBlue
+        button.setTitleColor(.white, for: .normal)
+        button.layer.cornerRadius = 20
         button.addTarget(self, action: #selector(didTapRegister), for: .touchUpInside)
         return button
     }()
@@ -59,18 +67,23 @@ class RegisterViewController: UIViewController {
         NSLayoutConstraint.activate([
             emailTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             emailTextField.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -100),
-            emailTextField.widthAnchor.constraint(equalToConstant: 250),
+            emailTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            emailTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             
             passwordTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             passwordTextField.topAnchor.constraint(equalTo: emailTextField.bottomAnchor, constant: 20),
-            passwordTextField.widthAnchor.constraint(equalToConstant: 250),
+            passwordTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            passwordTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             
             registerButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             registerButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 20),
+            registerButton.heightAnchor.constraint(equalToConstant: 50),
+            registerButton.leadingAnchor.constraint(equalTo: passwordTextField.leadingAnchor),
+            registerButton.trailingAnchor.constraint(equalTo: passwordTextField.trailingAnchor),
             
             errorLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             errorLabel.topAnchor.constraint(equalTo: registerButton.bottomAnchor, constant: 20),
-            errorLabel.widthAnchor.constraint(equalToConstant: 250)
+           
         ])
     }
     
