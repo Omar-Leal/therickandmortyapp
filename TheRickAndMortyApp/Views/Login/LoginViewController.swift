@@ -82,6 +82,7 @@ class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = UIColor(hex: "#F1F2F6")
         setupBindings()
         settingUpConstraints()
        
@@ -146,17 +147,16 @@ class LoginViewController: UIViewController {
         
         
     
-    @objc private func didTapLoginButton() {
+    @objc private func didTapLoginButton()
+       {
             guard let email = emailTextField.text, let password = passwordTextField.text else { return }
             viewModel.signIn(email: email, password: password)
+           
         }
         
         @objc private func didTapGoToRegisterScreen() {
-            // Navegación hacia otra pantalla (implementaremos más adelante)
-            let otherViewController = UIViewController() // Reemplaza con el controlador real cuando esté listo
-            otherViewController.view.backgroundColor = .white
-            otherViewController.title = "Other Screen"
-            navigationController?.pushViewController(otherViewController, animated: true)
+            let registerVC = RegisterViewController()
+            navigationController?.pushViewController(registerVC, animated: true)
         }
     
     

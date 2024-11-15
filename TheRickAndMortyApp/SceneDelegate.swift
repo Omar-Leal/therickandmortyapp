@@ -17,17 +17,19 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
        func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
            guard let windowScene = (scene as? UIWindowScene) else { return }
            
-           // Inicializar firebase
-          
+           // Inicializar fir     let mainApp =
            
            globalWindow = UIWindow(frame: windowScene.coordinateSpace.bounds)
            globalWindow?.windowScene = windowScene
            if appAuthService.currentUser.value != nil {
-               globalWindow?.rootViewController = MainTabBarController()
+               let mainViews = MainTabBarController()
+               let showAllView = UINavigationController(rootViewController: mainViews)
+               globalWindow?.rootViewController = showAllView
            } else {
                let loginViewModel = LoginViewModel(authService: appAuthService)
                let showLoginView = LoginViewController(viewModel: loginViewModel)
-               globalWindow?.rootViewController = showLoginView
+               let loginVC = UINavigationController(rootViewController: showLoginView)
+               globalWindow?.rootViewController = loginVC
            }
          
            globalWindow?.makeKeyAndVisible()

@@ -14,7 +14,10 @@ class LoginViewModel: ObservableObject {
     @Published var emailError: String?
     @Published var passwordError: String?
     
-    @Published var loginStatus: Bool = false
+    // para asignar la navegacion
+    let loginSuccess = PassthroughSubject<Void, Never>()
+    
+    
 
     init(authService: AuthServiceProtocol) {
         self.authService = authService
@@ -45,7 +48,7 @@ class LoginViewModel: ObservableObject {
                     print("Login error: \(error)")
                 }
             }, receiveValue: { [weak self] _ in
-                self?.loginStatus = true
+                self?.loginSuccess.send()
             })
             .store(in: &cancellables)
     }

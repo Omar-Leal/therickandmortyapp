@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		D893B8A3F65FD27139243F30 /* Pods_TheRickAndMortyApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 608152B3CDF4CA04D37471E0 /* Pods_TheRickAndMortyApp.framework */; };
 		E76BEE372CE6451A000FB38A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E76BEE362CE6451A000FB38A /* GoogleService-Info.plist */; };
+		E76BEE392CE654B3000FB38A /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76BEE382CE654A5000FB38A /* RegisterViewModel.swift */; };
+		E76BEE3C2CE654DC000FB38A /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76BEE3B2CE654DA000FB38A /* RegisterViewController.swift */; };
+		E76BEE402CE686AB000FB38A /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76BEE3F2CE686AB000FB38A /* HomeViewModel.swift */; };
+		E76BEE432CE68715000FB38A /* HomeCharacters.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76BEE422CE68715000FB38A /* HomeCharacters.swift */; };
+		E76BEE462CE68772000FB38A /* HomeCharactersService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76BEE452CE6876B000FB38A /* HomeCharactersService.swift */; };
+		E76BEE492CE69AC6000FB38A /* CharacterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76BEE482CE69AC6000FB38A /* CharacterCell.swift */; };
 		E7791B122CE542F300AAC8C6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7791B112CE542F300AAC8C6 /* HomeViewController.swift */; };
 		E7791B142CE543C300AAC8C6 /* EpisodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7791B132CE543C300AAC8C6 /* EpisodeViewController.swift */; };
 		E7791B162CE543D700AAC8C6 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7791B152CE543D700AAC8C6 /* LocationViewController.swift */; };
@@ -17,6 +23,8 @@
 		E7791B242CE56A4200AAC8C6 /* AuthServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7791B232CE56A4200AAC8C6 /* AuthServices.swift */; };
 		E7791B282CE56A8F00AAC8C6 /* AuthServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7791B272CE56A8F00AAC8C6 /* AuthServiceProtocol.swift */; };
 		E7791B2B2CE56ADA00AAC8C6 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7791B2A2CE56ADA00AAC8C6 /* UserProfile.swift */; };
+		E77AD6EC2CE741F300B8D6C2 /* FilterPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77AD6EB2CE741F300B8D6C2 /* FilterPopUpViewController.swift */; };
+		E77AD6EE2CE7467500B8D6C2 /* GetColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77AD6ED2CE7467500B8D6C2 /* GetColors.swift */; };
 		E7AAFD652CE510A200B54A0E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7AAFD642CE510A200B54A0E /* AppDelegate.swift */; };
 		E7AAFD672CE510A200B54A0E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7AAFD662CE510A200B54A0E /* SceneDelegate.swift */; };
 		E7AAFD692CE510A200B54A0E /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7AAFD682CE510A200B54A0E /* MainTabBarController.swift */; };
@@ -29,6 +37,12 @@
 		608152B3CDF4CA04D37471E0 /* Pods_TheRickAndMortyApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TheRickAndMortyApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFB82D5BFC5A5633B78EBEF0 /* Pods-TheRickAndMortyApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheRickAndMortyApp.debug.xcconfig"; path = "Target Support Files/Pods-TheRickAndMortyApp/Pods-TheRickAndMortyApp.debug.xcconfig"; sourceTree = "<group>"; };
 		E76BEE362CE6451A000FB38A /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E76BEE382CE654A5000FB38A /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
+		E76BEE3B2CE654DA000FB38A /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		E76BEE3F2CE686AB000FB38A /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		E76BEE422CE68715000FB38A /* HomeCharacters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCharacters.swift; sourceTree = "<group>"; };
+		E76BEE452CE6876B000FB38A /* HomeCharactersService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCharactersService.swift; sourceTree = "<group>"; };
+		E76BEE482CE69AC6000FB38A /* CharacterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCell.swift; sourceTree = "<group>"; };
 		E7791B112CE542F300AAC8C6 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		E7791B132CE543C300AAC8C6 /* EpisodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeViewController.swift; sourceTree = "<group>"; };
 		E7791B152CE543D700AAC8C6 /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
@@ -37,6 +51,8 @@
 		E7791B232CE56A4200AAC8C6 /* AuthServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthServices.swift; sourceTree = "<group>"; };
 		E7791B272CE56A8F00AAC8C6 /* AuthServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthServiceProtocol.swift; sourceTree = "<group>"; };
 		E7791B2A2CE56ADA00AAC8C6 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
+		E77AD6EB2CE741F300B8D6C2 /* FilterPopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterPopUpViewController.swift; sourceTree = "<group>"; };
+		E77AD6ED2CE7467500B8D6C2 /* GetColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetColors.swift; sourceTree = "<group>"; };
 		E7AAFD612CE510A200B54A0E /* TheRickAndMortyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheRickAndMortyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7AAFD642CE510A200B54A0E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E7AAFD662CE510A200B54A0E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -75,9 +91,45 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		E76BEE3A2CE654D2000FB38A /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				E76BEE3B2CE654DA000FB38A /* RegisterViewController.swift */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		E76BEE412CE68702000FB38A /* HomeCharacters */ = {
+			isa = PBXGroup;
+			children = (
+				E76BEE422CE68715000FB38A /* HomeCharacters.swift */,
+			);
+			path = HomeCharacters;
+			sourceTree = "<group>";
+		};
+		E76BEE442CE68756000FB38A /* HomeCharacterService */ = {
+			isa = PBXGroup;
+			children = (
+				E76BEE452CE6876B000FB38A /* HomeCharactersService.swift */,
+			);
+			path = HomeCharacterService;
+			sourceTree = "<group>";
+		};
+		E76BEE472CE69AA4000FB38A /* HomeView */ = {
+			isa = PBXGroup;
+			children = (
+				E7791B112CE542F300AAC8C6 /* HomeViewController.swift */,
+				E76BEE482CE69AC6000FB38A /* CharacterCell.swift */,
+				E77AD6EB2CE741F300B8D6C2 /* FilterPopUpViewController.swift */,
+			);
+			path = HomeView;
+			sourceTree = "<group>";
+		};
 		E7791B0E2CE5414000AAC8C6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E76BEE472CE69AA4000FB38A /* HomeView */,
+				E76BEE3A2CE654D2000FB38A /* Register */,
 				E7791B1C2CE5699000AAC8C6 /* Login */,
 				E7791B0F2CE5429800AAC8C6 /* Controllers */,
 			);
@@ -95,7 +147,6 @@
 			isa = PBXGroup;
 			children = (
 				E7AAFD682CE510A200B54A0E /* MainTabBarController.swift */,
-				E7791B112CE542F300AAC8C6 /* HomeViewController.swift */,
 				E7791B132CE543C300AAC8C6 /* EpisodeViewController.swift */,
 				E7791B152CE543D700AAC8C6 /* LocationViewController.swift */,
 			);
@@ -112,6 +163,7 @@
 		E7791B182CE568A400AAC8C6 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				E76BEE442CE68756000FB38A /* HomeCharacterService */,
 				E7791B262CE56A6200AAC8C6 /* AuthServices */,
 				E7791B252CE56A4800AAC8C6 /* Protocols */,
 			);
@@ -121,6 +173,7 @@
 		E7791B192CE568AB00AAC8C6 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				E76BEE412CE68702000FB38A /* HomeCharacters */,
 				E7791B292CE56AC400AAC8C6 /* User */,
 			);
 			path = Models;
@@ -129,6 +182,7 @@
 		E7791B1A2CE568B100AAC8C6 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				E77AD6ED2CE7467500B8D6C2 /* GetColors.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -136,7 +190,9 @@
 		E7791B1B2CE568CB00AAC8C6 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				E76BEE382CE654A5000FB38A /* RegisterViewModel.swift */,
 				E7791B212CE569E300AAC8C6 /* LoginViewModel.swift */,
+				E76BEE3F2CE686AB000FB38A /* HomeViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -326,15 +382,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E76BEE462CE68772000FB38A /* HomeCharactersService.swift in Sources */,
 				E7791B202CE569CC00AAC8C6 /* LoginViewController.swift in Sources */,
 				E7AAFD692CE510A200B54A0E /* MainTabBarController.swift in Sources */,
 				E7AAFD652CE510A200B54A0E /* AppDelegate.swift in Sources */,
+				E76BEE432CE68715000FB38A /* HomeCharacters.swift in Sources */,
 				E7791B282CE56A8F00AAC8C6 /* AuthServiceProtocol.swift in Sources */,
 				E7AAFD672CE510A200B54A0E /* SceneDelegate.swift in Sources */,
 				E7791B2B2CE56ADA00AAC8C6 /* UserProfile.swift in Sources */,
 				E7791B222CE569E300AAC8C6 /* LoginViewModel.swift in Sources */,
+				E77AD6EC2CE741F300B8D6C2 /* FilterPopUpViewController.swift in Sources */,
+				E76BEE392CE654B3000FB38A /* RegisterViewModel.swift in Sources */,
 				E7791B162CE543D700AAC8C6 /* LocationViewController.swift in Sources */,
+				E76BEE402CE686AB000FB38A /* HomeViewModel.swift in Sources */,
+				E77AD6EE2CE7467500B8D6C2 /* GetColors.swift in Sources */,
+				E76BEE492CE69AC6000FB38A /* CharacterCell.swift in Sources */,
 				E7791B242CE56A4200AAC8C6 /* AuthServices.swift in Sources */,
+				E76BEE3C2CE654DC000FB38A /* RegisterViewController.swift in Sources */,
 				E7791B122CE542F300AAC8C6 /* HomeViewController.swift in Sources */,
 				E7791B142CE543C300AAC8C6 /* EpisodeViewController.swift in Sources */,
 			);

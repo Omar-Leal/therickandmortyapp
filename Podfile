@@ -8,4 +8,5 @@ target 'TheRickAndMortyApp' do
   # Pods for TheRickAndMortyApp
   pod 'FirebaseAuth'
   pod 'FirebaseFirestore'
+  pod 'SkeletonView'
 end
