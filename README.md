@@ -64,8 +64,4 @@ Este repositorio contiene el proyecto desarrollado como parte de la prueba técn
 
 ---
 
-## Contacto  
 
-Si tienes alguna duda o comentario, no dudes en contactarme:  
-**Omar Leal**  
-omar.leal@example.com  
