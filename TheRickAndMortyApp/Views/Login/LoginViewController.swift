@@ -92,6 +92,13 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
+        view.addSubview(mainLogo)
+                view.addSubview(emailTextField)
+                view.addSubview(emailErrorLabel)
+                view.addSubview(passwordTextField)
+                view.addSubview(passwordErrorLabel)
+                view.addSubview(loginButton)
+                view.addSubview(goToRegisterScreen)
         setupBindings()
         settingUpConstraints()
        
@@ -100,14 +107,7 @@ class LoginViewController: UIViewController {
 
     private func settingUpConstraints() {
         
-        [
-         mainLogo,
-         emailTextField,
-         emailErrorLabel,
-         emailErrorLabel,
-         passwordTextField,
-         loginButton,
-         goToRegisterScreen].forEach(view.addSubview)
+        
         
         
             
