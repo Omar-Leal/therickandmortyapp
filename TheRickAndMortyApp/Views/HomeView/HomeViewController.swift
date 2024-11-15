@@ -80,7 +80,7 @@ class HomeViewController: UIViewController {
        }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-            // Cancelar cualquier trabajo previo pendiente
+
             debounceWorkItem?.cancel()
             debounceWorkItem = DispatchWorkItem { [weak self] in
                     self?.viewModel.searchCharacters(with: searchText)
@@ -99,12 +99,12 @@ class HomeViewController: UIViewController {
     @objc private func showFiltersPopup() {
         let popup = FilterPopUpViewController()
         
-        // Pasar los filtros seleccionados de regreso al ViewModel
+
         popup.onApplyFilters = { [weak self] status, species, gender in
             self?.viewModel.loadCharacters(status: status, species: species, gender: gender)
         }
         
-        // Configurar presentación como popup modal
+
         popup.modalPresentationStyle = .formSheet
         popup.modalTransitionStyle = .crossDissolve
         present(popup, animated: true, completion: nil)

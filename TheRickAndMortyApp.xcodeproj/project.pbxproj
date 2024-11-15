@@ -21,7 +21,6 @@
 		E7791B202CE569CC00AAC8C6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7791B1F2CE569CC00AAC8C6 /* LoginViewController.swift */; };
 		E7791B222CE569E300AAC8C6 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7791B212CE569E300AAC8C6 /* LoginViewModel.swift */; };
 		E7791B242CE56A4200AAC8C6 /* AuthServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7791B232CE56A4200AAC8C6 /* AuthServices.swift */; };
-		E7791B282CE56A8F00AAC8C6 /* AuthServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7791B272CE56A8F00AAC8C6 /* AuthServiceProtocol.swift */; };
 		E7791B2B2CE56ADA00AAC8C6 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7791B2A2CE56ADA00AAC8C6 /* UserProfile.swift */; };
 		E77AD6EC2CE741F300B8D6C2 /* FilterPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77AD6EB2CE741F300B8D6C2 /* FilterPopUpViewController.swift */; };
 		E77AD6EE2CE7467500B8D6C2 /* GetColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77AD6ED2CE7467500B8D6C2 /* GetColors.swift */; };
@@ -51,7 +50,6 @@
 		E7791B1F2CE569CC00AAC8C6 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		E7791B212CE569E300AAC8C6 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		E7791B232CE56A4200AAC8C6 /* AuthServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthServices.swift; sourceTree = "<group>"; };
-		E7791B272CE56A8F00AAC8C6 /* AuthServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthServiceProtocol.swift; sourceTree = "<group>"; };
 		E7791B2A2CE56ADA00AAC8C6 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		E77AD6EB2CE741F300B8D6C2 /* FilterPopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterPopUpViewController.swift; sourceTree = "<group>"; };
 		E77AD6ED2CE7467500B8D6C2 /* GetColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetColors.swift; sourceTree = "<group>"; };
@@ -132,37 +130,26 @@
 		E7791B0E2CE5414000AAC8C6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E77AD6F52CE7A7DD00B8D6C2 /* LocationView */,
+				E77AD6F42CE7A7CF00B8D6C2 /* EpisodeView */,
+				E77AD6F32CE7A7B000B8D6C2 /* MainTabBar */,
 				E76BEE472CE69AA4000FB38A /* HomeView */,
 				E76BEE3A2CE654D2000FB38A /* Register */,
 				E7791B1C2CE5699000AAC8C6 /* Login */,
-				E7791B0F2CE5429800AAC8C6 /* Controllers */,
 			);
 			path = Views;
 			sourceTree = "<group>";
 		};
-		E7791B0F2CE5429800AAC8C6 /* Controllers */ = {
+		E7791B172CE5689F00AAC8C6 /* AppCore */ = {
 			isa = PBXGroup;
 			children = (
-			);
-			path = Controllers;
-			sourceTree = "<group>";
-		};
-		E7791B102CE542B100AAC8C6 /* Core */ = {
-			isa = PBXGroup;
-			children = (
-				E7AAFD682CE510A200B54A0E /* MainTabBarController.swift */,
-				E7791B132CE543C300AAC8C6 /* EpisodeViewController.swift */,
-				E7791B152CE543D700AAC8C6 /* LocationViewController.swift */,
-			);
-			path = Core;
-			sourceTree = "<group>";
-		};
-		E7791B172CE5689F00AAC8C6 /* App */ = {
-			isa = PBXGroup;
-			children = (
+				E7AAFD662CE510A200B54A0E /* SceneDelegate.swift */,
 				E77AD6EF2CE76BDD00B8D6C2 /* AppCoordinator.swift */,
+				E7AAFD642CE510A200B54A0E /* AppDelegate.swift */,
+				E76BEE362CE6451A000FB38A /* GoogleService-Info.plist */,
+				E7AAFD6D2CE510A300B54A0E /* Assets.xcassets */,
 			);
-			path = App;
+			path = AppCore;
 			sourceTree = "<group>";
 		};
 		E7791B182CE568A400AAC8C6 /* Services */ = {
@@ -170,7 +157,6 @@
 			children = (
 				E76BEE442CE68756000FB38A /* HomeCharacterService */,
 				E7791B262CE56A6200AAC8C6 /* AuthServices */,
-				E7791B252CE56A4800AAC8C6 /* Protocols */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -207,23 +193,14 @@
 			isa = PBXGroup;
 			children = (
 				E7791B1F2CE569CC00AAC8C6 /* LoginViewController.swift */,
-				E7791B102CE542B100AAC8C6 /* Core */,
 			);
 			path = Login;
-			sourceTree = "<group>";
-		};
-		E7791B252CE56A4800AAC8C6 /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Protocols;
 			sourceTree = "<group>";
 		};
 		E7791B262CE56A6200AAC8C6 /* AuthServices */ = {
 			isa = PBXGroup;
 			children = (
 				E7791B232CE56A4200AAC8C6 /* AuthServices.swift */,
-				E7791B272CE56A8F00AAC8C6 /* AuthServiceProtocol.swift */,
 			);
 			path = AuthServices;
 			sourceTree = "<group>";
@@ -234,6 +211,30 @@
 				E7791B2A2CE56ADA00AAC8C6 /* UserProfile.swift */,
 			);
 			path = User;
+			sourceTree = "<group>";
+		};
+		E77AD6F32CE7A7B000B8D6C2 /* MainTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				E7AAFD682CE510A200B54A0E /* MainTabBarController.swift */,
+			);
+			path = MainTabBar;
+			sourceTree = "<group>";
+		};
+		E77AD6F42CE7A7CF00B8D6C2 /* EpisodeView */ = {
+			isa = PBXGroup;
+			children = (
+				E7791B132CE543C300AAC8C6 /* EpisodeViewController.swift */,
+			);
+			path = EpisodeView;
+			sourceTree = "<group>";
+		};
+		E77AD6F52CE7A7DD00B8D6C2 /* LocationView */ = {
+			isa = PBXGroup;
+			children = (
+				E7791B152CE543D700AAC8C6 /* LocationViewController.swift */,
+			);
+			path = LocationView;
 			sourceTree = "<group>";
 		};
 		E7AAFD582CE510A200B54A0E = {
@@ -261,14 +262,10 @@
 				E7791B1A2CE568B100AAC8C6 /* Utils */,
 				E7791B192CE568AB00AAC8C6 /* Models */,
 				E7791B182CE568A400AAC8C6 /* Services */,
-				E7791B172CE5689F00AAC8C6 /* App */,
+				E7791B172CE5689F00AAC8C6 /* AppCore */,
 				E7791B0E2CE5414000AAC8C6 /* Views */,
-				E7AAFD642CE510A200B54A0E /* AppDelegate.swift */,
-				E7AAFD662CE510A200B54A0E /* SceneDelegate.swift */,
-				E7AAFD6D2CE510A300B54A0E /* Assets.xcassets */,
 				E7AAFD6F2CE510A300B54A0E /* LaunchScreen.storyboard */,
 				E7AAFD722CE510A300B54A0E /* Info.plist */,
-				E76BEE362CE6451A000FB38A /* GoogleService-Info.plist */,
 			);
 			path = TheRickAndMortyApp;
 			sourceTree = "<group>";
@@ -393,7 +390,6 @@
 				E7AAFD692CE510A200B54A0E /* MainTabBarController.swift in Sources */,
 				E7AAFD652CE510A200B54A0E /* AppDelegate.swift in Sources */,
 				E76BEE432CE68715000FB38A /* HomeCharacters.swift in Sources */,
-				E7791B282CE56A8F00AAC8C6 /* AuthServiceProtocol.swift in Sources */,
 				E7AAFD672CE510A200B54A0E /* SceneDelegate.swift in Sources */,
 				E7791B2B2CE56ADA00AAC8C6 /* UserProfile.swift in Sources */,
 				E7791B222CE569E300AAC8C6 /* LoginViewModel.swift in Sources */,

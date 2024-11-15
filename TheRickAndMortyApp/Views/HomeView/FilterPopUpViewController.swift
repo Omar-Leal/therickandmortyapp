@@ -9,10 +9,10 @@ import UIKit
 
 class FilterPopUpViewController: UIViewController {
 
-    // Bloque que pasará los filtros seleccionados de regreso
+
        var onApplyFilters: ((String?, String?, String?) -> Void)?
        
-       // Opciones de los filtros (puedes usar UIPickerView, UISegmentedControl, etc.)
+ 
        private let statusTextField: UITextField = {
            let textField = UITextField()
            textField.placeholder = "Status (alive, dead, unknown)"
@@ -57,7 +57,7 @@ class FilterPopUpViewController: UIViewController {
            view.backgroundColor = .white
            view.layer.cornerRadius = 16
            
-           // Agregar subviews
+
            let stack = UIStackView(arrangedSubviews: [
                statusTextField,
                speciesTextField,
@@ -71,7 +71,7 @@ class FilterPopUpViewController: UIViewController {
            
            view.addSubview(stack)
            
-           // Configurar constraints
+     
            NSLayoutConstraint.activate([
                stack.centerXAnchor.constraint(equalTo: view.centerXAnchor),
                stack.centerYAnchor.constraint(equalTo: view.centerYAnchor),
@@ -81,12 +81,12 @@ class FilterPopUpViewController: UIViewController {
        }
        
        @objc private func applyFilters() {
-           // Recuperar valores seleccionados
+         
            let status = statusTextField.text
            let species = speciesTextField.text
            let gender = genderTextField.text
            
-           // Enviar los filtros al controlador principal
+         
            onApplyFilters?(status, species, gender)
            dismiss(animated: true, completion: nil)
        }

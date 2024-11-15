@@ -28,8 +28,6 @@ class LoginViewController: UIViewController {
             textField.borderStyle = .roundedRect
             textField.keyboardType = .emailAddress
             textField.autocapitalizationType = .none
-            textField.layer.cornerRadius = 20
-            textField.layer.masksToBounds = true
             textField.translatesAutoresizingMaskIntoConstraints = false
             return textField
         }()
@@ -49,8 +47,6 @@ class LoginViewController: UIViewController {
             textField.placeholder = "Password"
             textField.borderStyle = .roundedRect
             textField.isSecureTextEntry = true
-            textField.layer.cornerRadius = 20
-            textField.layer.masksToBounds = true
             textField.translatesAutoresizingMaskIntoConstraints = false
             return textField
         }()
@@ -103,13 +99,17 @@ class LoginViewController: UIViewController {
     
 
     private func settingUpConstraints() {
-            view.addSubview(mainLogo)
-            view.addSubview(emailTextField)
-            view.addSubview(emailErrorLabel)
-            view.addSubview(passwordTextField)
-            view.addSubview(passwordErrorLabel)
-            view.addSubview(loginButton)
-            view.addSubview(goToRegisterScreen)
+        
+        [
+         mainLogo,
+         emailTextField,
+         emailErrorLabel,
+         emailErrorLabel,
+         passwordTextField,
+         loginButton,
+         goToRegisterScreen].forEach(view.addSubview)
+        
+        
             
             
         NSLayoutConstraint.activate([

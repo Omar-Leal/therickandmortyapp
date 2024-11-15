@@ -14,16 +14,16 @@ class MainTabBarController: UITabBarController  {
         view.backgroundColor = UIColor(hex: "#F1F2F6")
       //  tabBar.isTranslucent = false
         
-        let blurEffect = UIBlurEffect(style: .systemMaterial) // Usa el estilo de desenfoque que prefieras
+        let blurEffect = UIBlurEffect(style: .systemMaterial)
 
-        // Crear un fondo con el efecto de desenfoque
+
         let blurBackground = UIVisualEffectView(effect: blurEffect)
         blurBackground.frame = tabBar.bounds
         blurBackground.autoresizingMask = [.flexibleWidth, .flexibleHeight]
 
-        // Configurar la apariencia del UITabBar
+
         let appearance = UITabBarAppearance()
-        appearance.backgroundEffect = blurEffect // Aplicar el efecto de desenfoque al fondo
+        appearance.backgroundEffect = blurEffect
 
         tabBar.standardAppearance = appearance
         if #available(iOS 15.0, *) {
@@ -33,15 +33,15 @@ class MainTabBarController: UITabBarController  {
                view.addSubview(navigationBar)
         
         navigationBar.setBackgroundImage(UIImage(), for: .default)
-                    navigationBar.shadowImage = UIImage() //
+                    navigationBar.shadowImage = UIImage()
         
                    navigationBar.isTranslucent = true
                    navigationBar.backgroundColor = .clear
                
-               // Crear un ítem de navegación
-               let navigationItem = UINavigationItem(title: "Título Manual")
+         
+               let navigationItem = UINavigationItem(title: "")
                
-               // Botones en la barra
+      
                let leftButton = UIBarButtonItem(title: "Sign Out", style: .plain, target: self, action: #selector(didTapSignOut))
                let rightButton = UIBarButtonItem(title: "Perfil", style: .plain, target: self, action: #selector(saveButtonTapped))
                navigationItem.leftBarButtonItem = leftButton
@@ -55,9 +55,9 @@ class MainTabBarController: UITabBarController  {
                 let locationViewController = UINavigationController(rootViewController: EpisodeViewController())
         
 
-                let logoImageView = UIImageView(image: UIImage(named: "rickandmortylogo"))
+                let logoImageView = UIImageView(image: UIImage(named: "Rick-and-Morty"))
                 logoImageView.contentMode = .scaleAspectFit
-                logoImageView.frame = CGRect(x: 0, y: 0, width: 100, height: 40) // Ajusta el tamaño según tu imagen
+                logoImageView.frame = CGRect(x: 0, y: 0, width: 100, height: 40)
                 
            
                 navigationItem.titleView = logoImageView

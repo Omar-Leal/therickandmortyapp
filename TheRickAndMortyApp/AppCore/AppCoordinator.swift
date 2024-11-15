@@ -32,23 +32,23 @@ class AppCoordinator {
     
 
     func start() {
-        // Escuchar el estado de autenticación de Firebase
+     
         authStateListenerHandle = Auth.auth().addStateDidChangeListener { [weak self] _, user in
             if let user = user {
-                // El usuario está logueado, navegar a la pantalla principal
+          
                 self?.showHomeScreen()
             } else {
-                // El usuario no está logueado, navegar a la pantalla de login
+         
                 self?.showLoginScreen()
             }
         }
 
-        // Inicialmente, muestra la pantalla correcta basándote en el estado de autenticación
+
         if Auth.auth().currentUser != nil {
-            // El usuario está logueado
+
             showHomeScreen()
         } else {
-            // El usuario no está logueado
+      
             showLoginScreen()
         }
     }
@@ -66,7 +66,7 @@ class AppCoordinator {
     }
 
     deinit {
-        // Eliminar el listener cuando el AppCoordinator se destruye
+    
         if let handle = authStateListenerHandle {
             Auth.auth().removeStateDidChangeListener(handle)
         }

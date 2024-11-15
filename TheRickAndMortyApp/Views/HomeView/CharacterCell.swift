@@ -31,11 +31,11 @@ class CharacterCell: UITableViewCell {
        }
 
        private func setupUI() {
-           // Configure the views here
+
            characterImageView.contentMode = .scaleAspectFill
            characterImageView.clipsToBounds = true
            characterImageView.layer.cornerRadius = 20
-           characterImageView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMinXMaxYCorner] // Esquinas superior izquierda y superior derecha
+           characterImageView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMinXMaxYCorner]
            characterImageView.clipsToBounds = true
 
            nameLabel.font = UIFont.boldSystemFont(ofSize: 18)
@@ -72,7 +72,7 @@ class CharacterCell: UITableViewCell {
                characterImageView.heightAnchor.constraint(equalToConstant: 190)
            ])
            
-           container.layer.cornerRadius = 20  // Bordes redondeados
+           container.layer.cornerRadius = 20
            container.layer.masksToBounds = false
            container.layer.shadowColor = UIColor.gray.cgColor
            container.layer.shadowOpacity = 0.1
@@ -102,14 +102,14 @@ class CharacterCell: UITableViewCell {
 
               
               
-              // Almacenamiento de la imagen en cache con el objeto creato en la carpeta Utils
+           
               ImageCache.shared.getImage(for: character.image) { [weak self] image in
                           DispatchQueue.main.async {
                               self?.characterImageView.image = image
                           }
                       }
           } else {
-              // Mostrar Skeleton si los datos aún no están disponibles
+          
               showSkeleton()
           }
       }

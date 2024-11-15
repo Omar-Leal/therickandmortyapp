@@ -16,9 +16,6 @@ class RegisterViewController: UIViewController {
         let textField = UITextField()
         textField.placeholder = "Correo electrónico"
         textField.borderStyle = .roundedRect
-        textField.layer.masksToBounds = true
-        textField.layer.cornerRadius = 20
-        
         return textField
     }()
     
@@ -27,8 +24,6 @@ class RegisterViewController: UIViewController {
         textField.placeholder = "Contraseña"
         textField.isSecureTextEntry = true
         textField.borderStyle = .roundedRect
-        textField.layer.cornerRadius = 20
-        textField.layer.masksToBounds = true
         return textField
     }()
     
@@ -59,7 +54,11 @@ class RegisterViewController: UIViewController {
     
     private func setupUI() {
         view.backgroundColor = .white
-        [emailTextField, passwordTextField, registerButton, errorLabel].forEach {
+        [
+            emailTextField,
+            passwordTextField,
+            registerButton,
+            errorLabel].forEach {
             view.addSubview($0)
             $0.translatesAutoresizingMaskIntoConstraints = false
         }
@@ -122,7 +121,6 @@ class RegisterViewController: UIViewController {
     }
     
     private func navigateToLogin() {
-        // Navega a la pantalla de Login
         let loginViewController = LoginViewController(viewModel: LoginViewModel(authService: AuthService()))  // Asegúrate de instanciar tu LoginViewController
         navigationController?.pushViewController(loginViewController, animated: true)
     }

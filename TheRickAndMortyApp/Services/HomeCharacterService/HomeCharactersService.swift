@@ -9,8 +9,7 @@ import Foundation
 
 class RickAndMortyService {
     private var baseURL = "https://rickandmortyapi.com/api/character"
-    
-    // Diccionario para almacenar la caché en memoria
+
     private var cache: [String: [HomeCharacters]] = [:]
     
     func fetchCharacters(
@@ -20,12 +19,12 @@ class RickAndMortyService {
         gender: String? = nil,
         completion: @escaping (Result<[HomeCharacters], Error>) -> Void) {
         
-        // Genera una clave de caché única basada en los parámetros de la solicitud
+    
         let cacheKey = "\(page)-\(status ?? "")-\(species ?? "")-\(gender ?? "")"
         
-        // Verifica si los datos están en la caché
+       
         if let cachedResponse = cache[cacheKey] {
-            // Si están en caché, devuelve los datos almacenados
+        
             completion(.success(cachedResponse))
             return
         }
@@ -60,7 +59,7 @@ class RickAndMortyService {
             do {
                 let response = try JSONDecoder().decode(CharacterResponse.self, from: data)
                 
-                // Almacena la respuesta en la caché antes de llamar al completion handler
+                // Almacena la respuesta en la caché
                 self.cache[cacheKey] = response.results
                 
                 completion(.success(response.results))

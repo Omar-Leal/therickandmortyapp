@@ -66,12 +66,12 @@ class HomeViewModel {
     }
     
     
-    // Limpiando filtros
+
     func resetFilters() {
           currentStatus = nil
           currentSpecies = nil
           currentGender = nil
-          loadCharacters() // Recargar sin filtros
+          loadCharacters()
       }
     
 }

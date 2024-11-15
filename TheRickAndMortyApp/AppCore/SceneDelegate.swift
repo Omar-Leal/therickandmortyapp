@@ -17,13 +17,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
        func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
            guard let windowScene = (scene as? UIWindowScene) else { return }
            
-           // Inicializar fir     let mainApp =
-           
-           
-                // Crear una nueva ventana para la escena
+   
            globalWindow = UIWindow(windowScene: windowScene)
         
-        // Crear el AppCoordinator y comenzar la navegación
         appCoordinator = AppCoordinator(window: globalWindow!)
         appCoordinator?.start()
            

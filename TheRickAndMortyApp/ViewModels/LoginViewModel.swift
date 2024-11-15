@@ -69,7 +69,7 @@ class LoginViewModel: ObservableObject {
     func signOut() {
            do {
                try AuthService.shared.signOut()
-               isLoggedIn = false // Actualiza el estado manualmente
+               isLoggedIn = false 
            } catch let error {
                print("Error al cerrar sesión: \(error.localizedDescription)")
            }
