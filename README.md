@@ -1,7 +1,4 @@
 
-# Prueba Técnica iOS  
-
-Este repositorio contiene el proyecto desarrollado como parte de la prueba técnica para la posición de desarrollador iOS. A continuación, se describen los detalles técnicos, patrones de diseño aplicados y funcionalidades implementadas.  
 
 ---
 
